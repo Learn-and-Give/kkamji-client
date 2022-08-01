@@ -1,17 +1,20 @@
 import api from "../my-api";
 
 export interface IQuizDetail {
-  quizbookId: number;
-  quizbookTitle: string;
-  quizbookWeek: number;
-  submitUserName: string;
-  quizId: number;
-  quizTitle: string;
-  quizContent: string;
-  quizCategory: string;
+  quizPacakageID: number;
+  quizID: number;
+  quizContent: {
+    example: string[] | null;
+    problem: string;
+  };
+  quizType: string;
+  quizAnswers: string[];
+  isSolved: boolean;
 }
 
-export const fetchQuizDetail = async (quizId: string) => {
-  const { data } = await api.get(`/quizzes/${quizId}/content`);
-  return data;
+export const fetchQuizDetail = async () => {
+  const {
+    data: { result },
+  } = await api.get("/quiz-detail");
+  return result;
 };

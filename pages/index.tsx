@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/quizbooks?week=1");
+    router.push("/quizbooks");
   }, [router]);
 
   return <div></div>;
