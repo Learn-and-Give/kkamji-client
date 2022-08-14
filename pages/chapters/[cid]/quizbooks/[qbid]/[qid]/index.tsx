@@ -218,7 +218,7 @@ function QuizDetailPage() {
             </div>
             <div className="flex flex-col items-end gap-3">
               <h2 className="w-full text-2xl">해설</h2>
-              <div className="flex flex-col gap-5 justify-between bg-white p-5 drop-shadow-md">
+              <div className="w-full flex flex-col gap-5 justify-between bg-white p-5 drop-shadow-md">
                 {quizAnswer?.quizExplanation}
                 {
                   <div className="px-3 bg-white border-l-4 border-indigo-400">
@@ -229,14 +229,6 @@ function QuizDetailPage() {
                   </div>
                 }
               </div>
-              {quizDetail?.isMine && (
-                <button
-                  onClick={onEditClick}
-                  className="w-fit bg-[#5c3cde] hover:bg-[#4026ab] text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline cursor-pointer"
-                >
-                  수정
-                </button>
-              )}
             </div>
           </div>
         )}
@@ -262,7 +254,6 @@ function QuizDetailPage() {
             </span>
           </div>
         )}
-        {showAnswer && <CommentContainer />}
         <div className="flex justify-between sm:justify-end sm:gap-3">
           <button
             onClick={() => onMoveQuizClick("prev")}
