@@ -9,7 +9,6 @@ interface Props {
 function QuizList({ quizzes }: Props) {
   const router = useRouter();
   const challengeId = String(router.query.cid);
-
   return (
     <table className="table w-full">
       <thead>
@@ -34,7 +33,7 @@ function QuizList({ quizzes }: Props) {
               <td>{quiz.quizTitle}</td>
               <td>{quiz.writerName}</td>
               <td>{quiz.quizWeek}</td>
-              {quiz.solveAnswer ? (
+              {quiz.isSolved ? (
                 <td>
                   <Icon
                     icon="bi:patch-check-fill"

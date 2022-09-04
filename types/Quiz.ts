@@ -121,8 +121,8 @@ export interface QuizSummary {
   quizCreatedDate: string;
   quizModifiedDate: string;
   isMine: boolean;
-  solveAnswer: string | null;
-  solveScore: number | null;
+  isSolved: boolean;
+  isGraded: boolean;
   writerName: string;
   challengeId: number;
 }
